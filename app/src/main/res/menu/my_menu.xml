@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_video"
+        android:title="录制视频">
+
+    </item>
+    <item
+        android:id="@+id/action_pic"
+        android:title="拍照模式">
+
+    </item>
+    <item
+        android:id="@+id/action_photos"
+        android:title="打开相册">
+    </item>
+</menu>

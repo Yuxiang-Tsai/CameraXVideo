@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".VideoPreviewActivity">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_info1" />
+
+
+    <Button
+        android:id="@+id/btn_delete_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_press"
+        android:text="删除"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_info1"
+        app:layout_constraintEnd_toStartOf="@+id/btn_info1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_rename_video"
+        app:layout_constraintTop_toTopOf="@+id/btn_info1" />
+
+    <Button
+        android:id="@+id/btn_rename_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_press"
+        android:text="重命名"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_delete_video"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete_video"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_delete_video" />
+
+    <Button
+        android:id="@+id/btn_info1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/info_selector"
+        android:contentDescription="详细信息"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/like_video_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_delete_video"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.varunest.sparkbutton.SparkButton
+        android:id="@+id/like_video_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/videoView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sparkbutton_activeImage="@drawable/active_like"
+        app:sparkbutton_iconSize="40dp"
+        app:sparkbutton_inActiveImage="@drawable/inactive_like"
+        app:sparkbutton_primaryColor="@color/red"
+        app:sparkbutton_secondaryColor="@color/gray" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
