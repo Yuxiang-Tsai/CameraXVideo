@@ -35,7 +35,6 @@ public class MainActivity2 extends AppCompatActivity {
     public static final int RESULT_CHANGE = 223;
     private static final int REQUEST_CODE = 123;
     public static SharedPreferences sharedPreferences;
-    //private final String TAG = "911";
     private final List<Object> objectsList = new ArrayList<>();
     private SharedPreferences.Editor editor;
     private boolean is_filter = false;//是否有搜索

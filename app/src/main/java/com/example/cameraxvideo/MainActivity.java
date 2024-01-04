@@ -13,7 +13,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -124,14 +123,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 TVStyleFocusAnimation(v, hasFocus, 1.0f, 1.2f);
-                ButtonTextColorChange(btn_gallery,hasFocus);
+                ButtonTextColorChange(btn_gallery, hasFocus);
             }
         });
         btn_change.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 TVStyleFocusAnimation(v, hasFocus, 1.0f, 1.2f);
-                ButtonTextColorChange(btn_change,hasFocus);
+                ButtonTextColorChange(btn_change, hasFocus);
             }
         });
         outputDirectory = getOutputDirectory();
@@ -229,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             initCamera();
         } else {
-            Toast.makeText(MainActivity.this,"在 onRequestPermissionsResult 退出",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "在 onRequestPermissionsResult 退出", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
@@ -330,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(cameraExecutor!=null){
+        if (cameraExecutor != null) {
             cameraExecutor.shutdown();
         }
     }
@@ -338,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if(cameraExecutor!=null){
+        if (cameraExecutor != null) {
             cameraExecutor.shutdown();
         }
     }

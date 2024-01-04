@@ -74,7 +74,7 @@ public class MyAdapter extends FocusRecyclerView.Adapter<FocusRecyclerView.ViewH
         } else if (holder instanceof PhotoHolder) {
             ImageFile imageFile = (ImageFile) mList.get(position);
             File file = imageFile.getFile();
-            ((PhotoHolder)holder).picName.setText(imageFile.getFile().getName());
+            ((PhotoHolder) holder).picName.setText(imageFile.getFile().getName());
             Glide.with(context)
                     .asBitmap()
                     .load(file)
@@ -206,7 +206,7 @@ public class MyAdapter extends FocusRecyclerView.Adapter<FocusRecyclerView.ViewH
 
     static class VideoHolder extends FocusRecyclerView.ViewHolder {
         ImageView imageView, iconView;
-        TextView duration,videoName;
+        TextView duration, videoName;
 
         public VideoHolder(@NonNull View itemView) {
             super(itemView);

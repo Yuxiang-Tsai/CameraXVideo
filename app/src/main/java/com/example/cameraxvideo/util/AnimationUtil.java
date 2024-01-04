@@ -21,10 +21,10 @@ public class AnimationUtil {
         v.startAnimation(animation);
     }
 
-    public static void ButtonTextColorChange(Button button,boolean hasFocus){
-        if(hasFocus){
+    public static void ButtonTextColorChange(Button button, boolean hasFocus) {
+        if (hasFocus) {
             button.setTextColor(Color.BLACK);
-        }else{
+        } else {
             button.setTextColor(Color.WHITE);
         }
     }

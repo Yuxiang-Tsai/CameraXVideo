@@ -4,7 +4,7 @@ import java.io.File;
 
 public class VideoFile {
     private File file;
-    private boolean isLiked=false;
+    private boolean isLiked = false;
     private String time;
 
     public File getFile() {

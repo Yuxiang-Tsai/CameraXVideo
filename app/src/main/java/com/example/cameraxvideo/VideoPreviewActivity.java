@@ -48,7 +48,7 @@ public class VideoPreviewActivity extends AppCompatActivity {
         btn_rename_video = findViewById(R.id.btn_rename_video);
         Button btn_info = findViewById(R.id.btn_info1);
         SparkButton btn_like = findViewById(R.id.like_video_button);
-        editor=sharedPreferences.edit();
+        editor = sharedPreferences.edit();
         //加载指定的视频文件
         Intent intent = getIntent();
         String videoFileUri = intent.getStringExtra("video");
@@ -56,7 +56,7 @@ public class VideoPreviewActivity extends AppCompatActivity {
         Uri fileUri = Uri.parse(videoFileUri);
         //根据Uri解析出文件的绝对路径
         File videoFile = new File(Objects.requireNonNull(fileUri.getPath()));
-        String fileID= String.valueOf(videoFile.lastModified());
+        String fileID = String.valueOf(videoFile.lastModified());
         videoView.setVideoPath(videoFile.toString());
         btn_like.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -74,25 +74,25 @@ public class VideoPreviewActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 TVStyleFocusAnimation(v, hasFocus, 1.0f, 1.1f);
-                ButtonTextColorChange(btn_delete_video,hasFocus);
+                ButtonTextColorChange(btn_delete_video, hasFocus);
             }
         });
         btn_rename_video.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 TVStyleFocusAnimation(v, hasFocus, 1.0f, 1.1f);
-                ButtonTextColorChange(btn_rename_video,hasFocus);
+                ButtonTextColorChange(btn_rename_video, hasFocus);
             }
         });
-        if(sharedPreferences.getBoolean(fileID,false)){
+        if (sharedPreferences.getBoolean(fileID, false)) {
             btn_like.setChecked(true);
         }
         btn_like.setEventListener(new SparkEventListener() {
             @Override
             public void onEvent(ImageView button, boolean buttonState) {
-                if(buttonState){
-                    editor.putBoolean(fileID,true);
-                }else {
+                if (buttonState) {
+                    editor.putBoolean(fileID, true);
+                } else {
                     editor.remove(fileID);
                 }
             }
@@ -107,7 +107,6 @@ public class VideoPreviewActivity extends AppCompatActivity {
 
             }
         });
-
 
 
         //创建MediaController对象
@@ -219,7 +218,7 @@ public class VideoPreviewActivity extends AppCompatActivity {
                                 Uri fileUri = Uri.fromFile(newFile);
                                 backintent.putExtra("new_photo", fileUri.toString()); // 将照片URI传递给预览活动
                                 backintent.putExtra("pos_rename", pos);
-                                backintent.putExtra("fileType",222);
+                                backintent.putExtra("fileType", 222);
                                 setResult(MainActivity2.RESULT_CHANGE, backintent);
                                 dialog.dismiss();
                                 finish();
